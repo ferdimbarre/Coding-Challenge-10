@@ -7,17 +7,20 @@
     <h2 id="product-name"> Star-Wars Socks </h2>
     <!--heading for product name-->
     <p id="product-price"> $7</p>
-    
+
     <select id="size-selector">
         <option value="7"> Small - $7</option>
         <option value="9"> Medium - $9</option>
         <option value="11"> Large - $11</option>
           <!--different size options-->
     </select>
-    <br>
-    <button type = submit > Purchase </button>
+    <p id="stock-count"> In Stock: 10</p>
+    <button id = "buy-now" disabled > Purchase now</button> 
+     <!--the button is disabled in case item is out of stock (updated in js file)-->
+
+     <!--links to a js file-->
     <script src="main.js"></script>
-      <!--links to a js file-->
+      <!--links to a css file-->
       <link rel="stylesheet" href="style.css">
 </body>
 </html>
