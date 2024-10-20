@@ -1,0 +1,9 @@
+
+#product-name{
+color: blue;
+font-style: bold;
+}
+#product-size {
+    font-size: 25 px;
+    background-color: rgb(102, 102, 207);
+}
