@@ -1,5 +1,5 @@
 const priceElement = document.getElementById("product-price");
-const sizeElement = document.getElementById("product-price");
+const sizeElement = document.getElementById("size-selector");
 
 sizeElement.addEventListener("change" , (event) => {
     const selectedPrice = event.target.value;
