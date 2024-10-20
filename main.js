@@ -40,3 +40,7 @@ buyNowButton.addEventListener("click", () => {
     alert (`Thank you for your purchase`) // this creates the checkout event
 }) //this function makes sure inventory is updated when purchase is made 
 
+//was having issue with the button being disabled, so added this command to make sure the page was reoloading and the button was working:
+
+const defaultSize = sizeElement.options[sizeElement.selectedIndex].text.split(" ")[0]; 
+handleInventory(defaultSize);  
