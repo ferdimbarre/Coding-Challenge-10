@@ -44,3 +44,4 @@ buyNowButton.addEventListener("click", () => {
 
 const defaultSize = sizeElement.options[sizeElement.selectedIndex].text.split(" ")[0]; 
 handleInventory(defaultSize);  
+console.log(defaultSize)
