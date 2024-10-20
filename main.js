@@ -10,7 +10,7 @@ sizeElement.addEventListener("change" , (event) => {
     priceElement.textContent = `$${selectedPrice}`
  //the html file had added selector for price and sizes, and the js file is going to update according to selection
 // Get the selected size and update inventory
-const selectedSize = event.target.options[event.target.selectedIndex].text.split(" ")[0];
+const selectedSize = event.target.options[event.target.selectedIndex].text.split(" ")[2][0];
 handleInventory(selectedSize);  // Call handleInventory based on size selection
 });
 
@@ -23,7 +23,7 @@ large: 0
 
 function handleInventory(size){
 const stock = stockBySize[size]//this will allow me to do an if statement using stock as a single thing by inputting the selected size 
-    if (stock > 0) {
+    if (stock < 11) {
         buyNowButton.disabled = false //this will allow the user to click on the button
         inventoryCount.textContent = `In Stock: ${stock}`;
     }
@@ -39,9 +39,3 @@ buyNowButton.addEventListener("click", () => {
     handleInventory(selectedSize); // updates inventory 
     alert (`Thank you for your purchase`) // this creates the checkout event
 }) //this function makes sure inventory is updated when purchase is made 
-
-//was having issue with the button being disabled, so added this command to make sure the page was reoloading and the button was working:
-
-const defaultSize = sizeElement.options[sizeElement.selectedIndex].text.split(" ")[0]; 
-handleInventory(defaultSize);  
-console.log(defaultSize)
