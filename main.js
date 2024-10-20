@@ -9,7 +9,7 @@ sizeElement.addEventListener("change" , (event) => {
     priceElement.textContent = `$${selectedPrice}`
  //the html file had added selector for price and sizes, and the js file is going to update according to selection
 // Get the selected size and update inventory
-const selectedSize = event.target.options[event.target.selectedIndex].text.split(" ")[0]; // Corrected this to index 0
+const selectedSize = event.target.options[event.target.selectedIndex].text.split(" ")[0].toLowerCase(); // Use lowercase for matching
 handleInventory(selectedSize);  // Call handleInventory based on size selection
 });
 
@@ -33,7 +33,7 @@ const stock = stockBySize[size]//this will allow me to do an if statement using 
 }; 
 
 buyNowButton.addEventListener("click", () => {
-    const selectedSize = sizeElement.options[sizeElement.selectedIndex].text.split(" ")[0]; // Ensure selectedSize is defined
+    const selectedSize = sizeElement.options[sizeElement.selectedIndex].text.split(" ")[0].toLowerCase(); // Ensure selectedSize is defined and matches the object
     stockBySize[selectedSize]--;  // decreases stock
     handleInventory(selectedSize); // updates inventory 
     alert (`Thank you for your purchase`) // this creates the checkout event
