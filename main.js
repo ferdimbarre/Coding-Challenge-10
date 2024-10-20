@@ -35,10 +35,8 @@ const stock = stockBySize[size]//this will allow me to do an if statement using 
 
 buyNowButton.addEventListener("click", () => {
     const selectedSize = sizeElement.options[sizeElement.selectedIndex].text.split(" ")[0]; // Ensure selectedSize is defined
-    stockBySize[selectedSize]--;  // Access object property using []
-    handleInventory(selectedSize); // Pass selectedSize to handleInventory
+    stockBySize[selectedSize]--;  // decreases stock
+    handleInventory(selectedSize); // updates inventory 
     alert (`Thank you for your purchase`) // this creates the checkout event
 }) //this function makes sure inventory is updated when purchase is made 
 
-const initialSize = sizeElement.options[sizeElement.selectedIndex].text.split(" ")[0]; // Set initial size
-handleInventory(initialSize);  // Pass initial size to handleInventory
