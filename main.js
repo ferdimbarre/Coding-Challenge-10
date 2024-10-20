@@ -1,4 +1,3 @@
-
 const priceElement = document.getElementById("product-price");
 const sizeElement = document.getElementById("size-selector");
 const inventoryCount = document.getElementById("stock-count");
@@ -10,7 +9,7 @@ sizeElement.addEventListener("change" , (event) => {
     priceElement.textContent = `$${selectedPrice}`
  //the html file had added selector for price and sizes, and the js file is going to update according to selection
 // Get the selected size and update inventory
-const selectedSize = event.target.options[event.target.selectedIndex].text.split(" ")[2][0];
+const selectedSize = event.target.options[event.target.selectedIndex].text.split(" ")[0]; // Corrected this to index 0
 handleInventory(selectedSize);  // Call handleInventory based on size selection
 });
 
@@ -23,7 +22,7 @@ large: 0
 
 function handleInventory(size){
 const stock = stockBySize[size]//this will allow me to do an if statement using stock as a single thing by inputting the selected size 
-    if (stock < 11) {
+    if (stock > 0) { // Corrected condition to check if stock is greater than 0
         buyNowButton.disabled = false //this will allow the user to click on the button
         inventoryCount.textContent = `In Stock: ${stock}`;
     }
@@ -38,4 +37,4 @@ buyNowButton.addEventListener("click", () => {
     stockBySize[selectedSize]--;  // decreases stock
     handleInventory(selectedSize); // updates inventory 
     alert (`Thank you for your purchase`) // this creates the checkout event
-}) //this function makes sure inventory is updated when purchase is made 
+}) //this function makes sure inventory is updated when purchase is made
